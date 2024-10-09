@@ -2,26 +2,150 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Global styles */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1E1F2F; /* Darkish bluish-violet background */
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.container {
+  background-color: #2C2D48; /* Slightly lighter violet for the box */
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Heading styles */
+h1 {
+  color: #F5C71A; /* Yellow color for heading */
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  color: #FFF;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+  background-color: #3A3B5D; /* Dark input background */
+  color: #FFF;
+}
+
+button {
+  padding: 10px;
+  background-color: #F5C71A;
+  color: #1E1F2F;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #FFDD4A;
+}
+
+/* Expense list */
+.expense-list {
+  margin-bottom: 20px;
+}
+
+.expense-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expense-list li {
+  background-color: #333455;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expense-list li button {
+  background-color: #F5C71A;
+  color: #1E1F2F;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.expense-list li button:hover {
+  background-color: #FFDD4A;
+}
+
+/* Total expenses */
+.total-expense {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #F5C71A;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding: 10px;
+  background-color: #2C2D48;
+  border-radius: 5px;
+}
+
+footer p {
+  color: #F5C71A;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .expense-list li {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
